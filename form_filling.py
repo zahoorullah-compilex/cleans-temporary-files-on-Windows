@@ -5,6 +5,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 import random
 
+options = webdriver.ChromeOptions()
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+options.add_experimental_option('useAutomationExtension', False)
+
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 # chrome  = webdriver.Chrome()
 driver.maximize_window()
